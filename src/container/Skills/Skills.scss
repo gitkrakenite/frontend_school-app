@@ -1,0 +1,66 @@
+.appSkillsWrapper {
+  margin-top: 2em;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 2fr;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.app__skills_list {
+  display: flex;
+  //   justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .app_content {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500 !important;
+}
+
+.text_content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  .separator {
+    width: 1em;
+    background-color: black;
+    height: 80%;
+    border-radius: 10px;
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  .main_text {
+    margin-top: 1.9em;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.8em;
+    h3 {
+      font-size: 26px;
+    }
+
+    p {
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+  }
+}
