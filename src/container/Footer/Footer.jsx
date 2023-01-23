@@ -23,22 +23,25 @@ const Footer = () => {
   };
 
   const handleSubmit = () => {
-    setLoading(true);
+    if (!username || !email || !message) {
+      alert("All fields required");
+    } else {
+      setLoading(true);
+      const contact = {
+        _type: "contact",
+        name: username,
+        email: email,
+        message: message,
+      };
 
-    const contact = {
-      _type: "contact",
-      name: username,
-      email: email,
-      message: message,
-    };
-
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
+      client
+        .create(contact)
+        .then(() => {
+          setLoading(false);
+          setIsFormSubmitted(true);
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -51,15 +54,15 @@ const Footer = () => {
           <div className="app__footer-cards">
             <div className="app__footer-card ">
               <img src={images.email} alt="email" />
-              <a href="mailto:dita@daystar.ac.ke" className="p-text">
-                dita@daystar.ac.ke
+              <a href="mailto:darbyles303@gmail.com" className="p-text">
+                darbyles303@gmail.com
               </a>
             </div>
             {/* calls */}
             <div className="app__footer-card">
               <img src={images.mobile} alt="phone" />
               <a href="tel:0792 953198" className="p-text">
-                0792 953198
+                0798 556471
               </a>{" "}
             </div>
           </div>
@@ -74,6 +77,7 @@ const Footer = () => {
                   name="username"
                   value={username}
                   onChange={handleChangeInput}
+                  required
                 />
               </div>
               <div className="app__flex">
@@ -84,6 +88,7 @@ const Footer = () => {
                   name="email"
                   value={email}
                   onChange={handleChangeInput}
+                  required
                 />
               </div>
               <div>
@@ -93,6 +98,7 @@ const Footer = () => {
                   value={message}
                   name="message"
                   onChange={handleChangeInput}
+                  required
                 />
               </div>
               <button type="button" className="p-text" onClick={handleSubmit}>

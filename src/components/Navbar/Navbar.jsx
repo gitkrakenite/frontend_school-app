@@ -6,7 +6,7 @@ import closeIcon from "../../assets/closeIcon.png";
 import { HiMenuAlt4 } from "react-icons/hi";
 
 import { motion } from "framer-motion";
-import logo from "../../assets/ditaB.png";
+import logo from "../../assets/vLogo.png";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -24,12 +24,14 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         {[
           "home",
-          "about",
+          "work",
+          "transport",
           "events",
-          "projects",
-          "offer",
-          "skills",
-          "testimonial",
+          "accomodation",
+          "activities",
+          "opportunities",
+          // "menu",
+          // "help",
           "contact",
         ].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
@@ -59,12 +61,14 @@ const Navbar = () => {
 
             {[
               "home",
-              "about",
+              "work",
+              "transport",
               "events",
-              "projects",
-              "offer",
-              "skills",
-              "testimonial",
+              "accomodation",
+              "activities",
+              "opportunities",
+              // "menu",
+              // "help",
               "contact",
             ].map((item) => (
               <ul key={item}>

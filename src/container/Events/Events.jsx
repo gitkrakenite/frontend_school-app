@@ -41,12 +41,12 @@ const Events = () => {
   return (
     <div className="eventWrapper">
       <h2>
-        Our <span className="eventHighlight">events</span> are to behold. We
-        exceed your <span className="eventHighlight">expectations</span>.{" "}
+        Check all<span className="eventHighlight"> events</span> in both
+        campuses <span className="eventHighlight">D-Events</span>.{" "}
       </h2>
 
       <div className="app__work-filter">
-        {["Upcoming", "Happening", "Recent", "Past", "All"].map(
+        {["Upcoming", "NRBI Campus", "Happening", "Recent", "Past", "All"].map(
           (item, index) => (
             <div
               key={index}
@@ -69,33 +69,39 @@ const Events = () => {
       >
         {filterWork.map((events, index) => (
           <div className="app__work-item app__flex" key={index}>
-            <div className="app__work-img app__flex">
-              <img
-                src={urlFor(events.imgUrl)}
-                alt={events.name}
-                // style={{ width: "100px" }}
-              />
+            {events ? (
+              <>
+                <div className="app__work-img app__flex">
+                  <img
+                    src={urlFor(events.imgUrl)}
+                    alt={events.name}
+                    // style={{ width: "100px" }}
+                  />
 
-              <motion.div
-                whileHover={{ opacity: [0, 1] }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeInOut",
-                  staggerChildren: 0.5,
-                }}
-                className="app__work-hover app__flex"
-              >
-                <a href={events.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
+                    whileHover={{ opacity: [0, 1] }}
+                    transition={{
+                      duration: 0.25,
+                      ease: "easeInOut",
+                      staggerChildren: 0.5,
+                    }}
+                    className="app__work-hover app__flex"
                   >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
-                {/* <a href={events.codeLink} target="_blank" rel="noreferrer">
+                    <a
+                      href={events.projectLink}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <motion.div
+                        whileInView={{ scale: [0, 1] }}
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.25 }}
+                        className="app__flex"
+                      >
+                        <AiFillEye />
+                      </motion.div>
+                    </a>
+                    {/* <a href={events.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -105,24 +111,28 @@ const Events = () => {
                     <AiFillGithub />
                   </motion.div>
                 </a> */}
-              </motion.div>
-            </div>
+                  </motion.div>
+                </div>
 
-            <div className="app__work-content app__flex">
-              <h4 className="bold-text">{events.title}</h4>
+                <div className="app__work-content app__flex">
+                  <h4 className="bold-text">{events.title}</h4>
 
-              <p className="p-text time" style={{ marginTop: 10 }}>
-                {events.time}
-              </p>
+                  <p className="p-text time" style={{ marginTop: 10 }}>
+                    {events.time}
+                  </p>
 
-              <p className="p-text" style={{ marginTop: 10 }}>
-                {events.description}
-              </p>
+                  <p className="p-text" style={{ marginTop: 10 }}>
+                    {events.description}
+                  </p>
 
-              <div className="app__work-tag app__flex">
-                <p className="p-text">{events.tags[0]}</p>
-              </div>
-            </div>
+                  <div className="app__work-tag app__flex">
+                    <p className="p-text">{events.tags[0]}</p>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div>There doesn't seem to be such an event yet</div>
+            )}
           </div>
         ))}
       </motion.div>

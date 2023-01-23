@@ -1,0 +1,36 @@
+.transportWrapper {
+  padding: 4em;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .transportContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    .transportItem {
+      display: flex;
+      gap: 30px;
+      padding: 15px;
+      box-shadow: 4px 5px 5px 0px rgba(158, 147, 147, 0.75);
+      -webkit-box-shadow: 4px 5px 5px 0px rgba(158, 147, 147, 0.75);
+      -moz-box-shadow: 4px 5px 5px 0px rgba(158, 147, 147, 0.75);
+      align-items: center;
+      gap: 40px;
+      border-radius: 5px;
+
+      @media (max-width: 600px) {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 2px;
+  }
+}

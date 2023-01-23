@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import Carousel from "react-bootstrap/Carousel";
+import firstImg from "../../assets/ditaLogo.jpeg";
 
 // import { images } from "../../constants";
 
@@ -11,39 +12,51 @@ const Header = () => {
         <Carousel.Item interval={1700}>
           <img
             className="imgCarousel"
-            src="https://images.pexels.com/photos/6146970/pexels-photo-6146970.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://images.pexels.com/photos/3182792/pexels-photo-3182792.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="First slide"
           />
           <Carousel.Caption className="Carousel__caption">
-            <h3>Daystar Information Technology Association</h3>
-            <p>A community working towards the sole purpose of greatness</p>
+            <h3>Do you want to hire someone ?</h3>
+            <p>Have a pending task or need a website ?</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={500}>
           <img
             className="imgCarousel"
             // style={{ height: "200px" }}
-            src="https://images.pexels.com/photos/6893810/pexels-photo-6893810.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://images.pexels.com/photos/996954/pexels-photo-996954.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Second slide"
           />
           <Carousel.Caption className="Carousel__caption">
-            <h3>Where the world meets tech.</h3>
+            <h3>Are You commuting today.</h3>
+            <p>Check which bus is going where and from where.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="imgCarousel"
+            src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Third slide"
+          />
+          <Carousel.Caption className="Carousel__caption">
+            <h3>Hungry Already ?</h3>
             <p>
-              Solving real world issues with the most powerful technologies.
+              Check out people's favorite dish around Athi River and Any Offers
+              available around the community.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="imgCarousel"
-            src="https://images.pexels.com/photos/6140697/pexels-photo-6140697.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Third slide"
           />
           <Carousel.Caption className="Carousel__caption">
-            <h3>Executive Team</h3>
+            <h3>Need a place to stay ?</h3>
             <p>
-              Powered by the most brilliant minds, nothing can stand in our way.
-              To the stars we go.
+              Check out houses available around the community. Also get the
+              pricing and contact info of the caretaker.
             </p>
           </Carousel.Caption>
         </Carousel.Item>

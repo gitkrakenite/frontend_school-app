@@ -6,7 +6,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Testimonial.scss";
 
-const Testimonial = () => {
+const Help = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
   const [brands, setBrands] = useState([]);
@@ -16,7 +16,7 @@ const Testimonial = () => {
   };
 
   useEffect(() => {
-    const query = '*[_type == "testimonials"]';
+    const query = '*[_type == "help"]';
     const brandsQuery = '*[_type == "brands"]';
 
     client.fetch(query).then((data) => {
@@ -30,7 +30,7 @@ const Testimonial = () => {
 
   return (
     <>
-      <h6>Testimonials and Reviews</h6>
+      <h6>Daystarians who need our help as a Community</h6>
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
@@ -39,10 +39,12 @@ const Testimonial = () => {
               alt="testimonial"
             />
             <div className="app__testimonial-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
+              <p className="p-text">{testimonials[currentIndex].description}</p>
               <div>
                 <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+                <h5 className="p-text">
+                  Reach out: {testimonials[currentIndex].phone}
+                </h5>
               </div>
             </div>
 
@@ -78,7 +80,7 @@ const Testimonial = () => {
         </>
       )}
 
-      <div className="app__testimonial-brands app__flex">
+      {/* <div className="app__testimonial-brands app__flex">
         {brands.map((brand) => (
           <motion.div
             whileInView={{ opacity: [0, 1] }}
@@ -88,14 +90,14 @@ const Testimonial = () => {
             <img src={urlFor(brand.imgUrl)} alt={brand.name} />
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 };
 
 // export default Testimonial;
 export default AppWrap(
-  MotionWrap(Testimonial, "app__testimonial"),
-  "testimonial",
+  MotionWrap(Help, "app__testimonial"),
+  "help",
   "app__primarybg"
 );

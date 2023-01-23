@@ -1,0 +1,36 @@
+.activitiesWrapper {
+  padding: 4em;
+  text-align: left;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .activitiesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .activitiesItem {
+      img {
+        width: 500px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+        @media (max-width: 800px) {
+          width: 100%;
+        }
+      }
+      h5 {
+        font-weight: normal;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 2px;
+  }
+}
